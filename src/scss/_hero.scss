@@ -1,0 +1,206 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Hero Section Layout & Full-Height Split Background
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: $color-cream-bg;
+  padding-top: 10px;
+  padding-bottom: 0;
+
+  // Full-width solid white background for bottom 1/4 of screen
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: $color-white;
+    z-index: $z-normal;
+  }
+
+  // Background Split: Right 37.9% is Mint Green for top 75% of screen
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 37.9%;
+    height: 75%;
+    background-color: $color-mint-bg;
+    z-index: $z-normal;
+
+    @include laptop {
+      width: 40%;
+      height: 75%;
+    }
+
+    @include tablet {
+      width: 100%;
+      height: 45%;
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+// Two-Petal Shadow Watermark SVG positioned directly behind model head/neck in mint section
+.hero-watermark {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  width: 500px;
+  height: 480px;
+  opacity: 1.0;
+  z-index: 2;
+  pointer-events: none;
+
+  @include laptop {
+    width: 420px;
+    height: 400px;
+    top: 8%;
+    right: 4%;
+  }
+}
+
+.hero-container {
+  width: 94%;
+  max-width: 1750px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 20px;
+  align-items: flex-end;
+  position: relative;
+  z-index: $z-floating;
+
+  @include laptop {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 20px;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+}
+
+// Left Column Content
+.hero-content {
+  padding-right: 20px;
+  align-self: flex-start;
+  margin-top: -120px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding-right: 0;
+  }
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 36px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.btn-book {
+  @include button-pill($color-navy, $color-white);
+  padding: 18px 42px;
+  font-size: 1.05rem;
+}
+
+.btn-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: $color-navy;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: $transition-fast;
+
+  .play-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $color-white;
+    @include flex-center;
+    box-shadow: $shadow-md;
+    transition: $transition-base;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: $color-navy;
+      margin-left: 2px;
+    }
+  }
+
+  &:hover {
+    .play-icon-wrapper {
+      transform: scale(1.08);
+      box-shadow: $shadow-lg;
+    }
+  }
+}
+
+// Right Column Visual Layout
+.hero-visual {
+  position: relative;
+  height: 100%;
+  min-height: 720px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+
+  @include laptop {
+    min-height: 600px;
+  }
+
+  @include tablet {
+    min-height: 480px;
+    margin-top: 30px;
+  }
+}
+
+// Large model image reaching baseline with head aligned at main title level
+.model-image {
+  position: absolute;
+  bottom: 35px;
+  left: -170px;
+  height: 770px;
+  max-height: 770px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom;
+  z-index: 4;
+  filter: none;
+
+  @include laptop {
+    height: 560px;
+    left: -140px;
+  }
+
+  @include tablet {
+    height: 420px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+}

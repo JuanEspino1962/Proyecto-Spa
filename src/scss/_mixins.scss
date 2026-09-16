@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+// Layout Flexbox Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Glassmorphism Card Style
+@mixin glass-card {
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  -webkit-backdrop-filter: $glass-blur;
+  border: $glass-border;
+  box-shadow: $shadow-md;
+  border-radius: $radius-lg;
+}
+
+// Button Styling Helpers
+@mixin button-pill($bg-color, $text-color) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: $radius-pill;
+  transition: $transition-base;
+  box-shadow: 0 8px 20px rgba($bg-color, 0.25);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba($bg-color, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Responsive Media Queries
+@mixin desktop-lg {
+  @media (min-width: 1440px) { @content; }
+}
+
+@mixin desktop {
+  @media (max-width: 1200px) { @content; }
+}
+
+@mixin laptop {
+  @media (max-width: 1024px) { @content; }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin mobile {
+  @media (max-width: 480px) { @content; }
+}
