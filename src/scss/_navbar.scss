@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // Navbar Component
 .site-header {
@@ -74,11 +74,11 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  margin-right: 180px;
+  margin-right: 24px;
 
   @include laptop {
     gap: 18px;
-    margin-right: 80px;
+    margin-right: 0;
   }
 }
 

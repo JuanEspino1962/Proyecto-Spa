@@ -1,164 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlowQueen - Spa & Skincare Treatments</title>
-  <meta name="description" content="Bring back the beauty and glow of your skin with GlowQueen professional spa and skincare treatments.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="#" class="brand-logo" id="logo">
-        <span class="brand-glow">Glow</span><span class="brand-queen">Queen</span>
-      </a>
-
-      <nav class="nav-menu" id="primary-nav">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#facilities" class="nav-link">Facilities</a>
-        <a href="#more" class="nav-link has-dropdown">
-          More
-          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowQueen - Spa & Skincare Treatments</title>
+    <meta
+      name="description"
+      content="Bring back the beauty and glow of your skin with GlowQueen professional spa and skincare treatments."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="#" class="brand-logo" id="logo">
+          <span class="brand-glow">Glow</span
+          ><span class="brand-queen">Queen</span>
         </a>
-      </nav>
 
-      <div class="nav-actions">
-        <button class="icon-btn" aria-label="Search" id="search-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
+        <nav class="nav-menu" id="primary-nav">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#facilities" class="nav-link">Facilities</a>
+          <a href="#more" class="nav-link has-dropdown">
+            More
+            <svg
+              class="chevron-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2.5"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+        </nav>
 
-        <button class="icon-btn" aria-label="Shopping Cart" id="cart-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span class="cart-badge"></span>
-        </button>
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Search" id="search-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
 
-        <a href="#signin" class="auth-link">Sign In</a>
-        <a href="#signup" class="btn-signup">Sign Up</a>
+          <button class="icon-btn" aria-label="Shopping Cart" id="cart-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge"></span>
+          </button>
 
-        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobile-menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <a href="#signin" class="auth-link">Sign In</a>
+          <a href="#signup" class="btn-signup">Sign Up</a>
+
+          <button
+            class="mobile-toggle"
+            aria-label="Toggle navigation menu"
+            id="mobile-menu-btn"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main Hero Section -->
-  <main>
-    <section class="hero-section" id="hero">
+    <!-- Main Hero Section -->
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="hero-container">
+          <!-- Left Hero Content -->
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="title-line">Bring back the beauty</span><br /><span
+                class="title-line"
+                >and glow of your skin</span
+              >
+            </h1>
+            <p class="hero-description">
+              We provide you various treatments from head to toe using the<br />best
+              product, advanced technology, and affordable price
+            </p>
 
-      <div class="hero-container">
-        <!-- Left Hero Content -->
-        <div class="hero-content">
-          <h1 class="hero-title"><span class="title-line">Bring back the beauty</span><br><span class="title-line">and glow of your skin</span></h1>
-          <p class="hero-description">
-            We provide you various treatments from head to toe using the<br>best product, advanced technology, and affordable price
-          </p>
+            <div class="hero-cta-group">
+              <a href="#book" class="btn-book">Book Now</a>
+              <button class="btn-video" id="play-video-btn">
+                <span class="play-icon-wrapper">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </span>
+                Watch Video
+              </button>
+            </div>
 
-          <div class="hero-cta-group">
-            <a href="#book" class="btn-book">Book Now</a>
-            <button class="btn-video" id="play-video-btn">
-              <span class="play-icon-wrapper">
+            <!-- Hero Floating Stats Card -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <!-- Facial Mask Icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path
+                      d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Special<br />Treatment</span>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <!-- Lotus Flower Icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 3c-2.5 4-4 7-4 10a4 4 0 0 0 8 0c0-3-1.5-6-4-10z"
+                    ></path>
+                    <path d="M12 13c-4-2-8 1-8 5a4 4 0 0 0 7 2.5"></path>
+                    <path d="M12 13c4-2 8 1 8 5a4 4 0 0 1-7 2.5"></path>
+                  </svg>
+                </div>
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Professional<br />Therapist</span>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <!-- Herbal Mortar Icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 11h16a1 1 0 0 1 1 1v2a7 7 0 0 1-14 0v-2a1 1 0 0 1 1-1z"
+                    ></path>
+                    <path d="M15 4l-4 8"></path>
+                    <path d="M8 20h8"></path>
+                  </svg>
+                </div>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Herbal<br />Cream Formula</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual & Glassmorphism Cards -->
+          <div class="hero-visual">
+            <img
+              src="/images/spa-model.jpg"
+              alt="GlowQueen Spa Model"
+              class="model-image"
+            />
+
+            <!-- Top Testimonial Glassmorphism Card -->
+            <blockquote class="testimonial-card card-sophia">
+              <div class="quote-icon">
                 <svg viewBox="0 0 24 24">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-              </span>
-              Watch Video
-            </button>
-          </div>
-
-          <!-- Hero Floating Stats Card -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <!-- Facial Mask Icon -->
-                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="9"></circle>
-                  <path d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"></path>
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
                 </svg>
               </div>
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Special<br>Treatment</span>
-            </div>
+              <p class="testimonial-text">
+                I have a regular schedule to take treatment from GlowQueen, they
+                gave me the best service and treatment ever to maintain the
+                beauty and health of my skin
+              </p>
+              <cite class="testimonial-author">Sophia Princeton</cite>
+            </blockquote>
 
-            <div class="stat-item">
-              <div class="stat-icon">
-                <!-- Lotus Flower Icon -->
-                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 3c-2.5 4-4 7-4 10a4 4 0 0 0 8 0c0-3-1.5-6-4-10z"></path>
-                  <path d="M12 13c-4-2-8 1-8 5a4 4 0 0 0 7 2.5"></path>
-                  <path d="M12 13c4-2 8 1 8 5a4 4 0 0 1-7 2.5"></path>
+            <!-- Bottom Testimonial Glassmorphism Card -->
+            <blockquote class="testimonial-card card-tamara">
+              <div class="quote-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
                 </svg>
               </div>
-              <span class="stat-number">25+</span>
-              <span class="stat-label">Professional<br>Therapist</span>
-            </div>
-
-            <div class="stat-item">
-              <div class="stat-icon">
-                <!-- Herbal Mortar Icon -->
-                <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 11h16a1 1 0 0 1 1 1v2a7 7 0 0 1-14 0v-2a1 1 0 0 1 1-1z"></path>
-                  <path d="M15 4l-4 8"></path>
-                  <path d="M8 20h8"></path>
-                </svg>
-              </div>
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Herbal<br>Cream Formula</span>
-            </div>
+              <p class="testimonial-text">
+                For the past few years, I've had a hard time finding the right
+                place for skin care to deal with my complicated skin condition,
+                thank God I found GlowQueen to treat my skin
+              </p>
+              <cite class="testimonial-author">Tamara Jules</cite>
+            </blockquote>
           </div>
         </div>
+      </section>
+    </main>
 
-        <!-- Right Hero Visual & Glassmorphism Cards -->
-        <div class="hero-visual">
-          <img src="/images/spa-model.png" alt="GlowQueen Spa Model" class="model-image" />
-
-          <!-- Top Testimonial Glassmorphism Card -->
-          <blockquote class="testimonial-card card-sophia">
-            <div class="quote-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-            </div>
-            <p class="testimonial-text">
-              I have a regular schedule to take treatment from GlowQueen, they gave me the best service and treatment ever to maintain the beauty and health of my skin
-            </p>
-            <cite class="testimonial-author">Sophia Princeton</cite>
-          </blockquote>
-
-          <!-- Bottom Testimonial Glassmorphism Card -->
-          <blockquote class="testimonial-card card-tamara">
-            <div class="quote-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-            </div>
-            <p class="testimonial-text">
-              For the past few years, I've had a hard time finding the right place for skin care to deal with my complicated skin condition, thank God I found GlowQueen to treat my skin
-            </p>
-            <cite class="testimonial-author">Tamara Jules</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

@@ -1,21 +1,28 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+$header-height: 90px;
 
 // Hero Section Layout & Full-Height Split Background
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  height: 100svh;
+  min-height: 0;
+
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+
   overflow: hidden;
   background-color: $color-cream-bg;
-  padding-top: 10px;
-  padding-bottom: 0;
+
+  padding: 20px 0;
+  margin: 0;
+  box-sizing: border-box;
 
   // Full-width solid white background for bottom 1/4 of screen
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -27,7 +34,7 @@
 
   // Background Split: Right 37.9% is Mint Green for top 75% of screen
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -43,9 +50,9 @@
 
     @include tablet {
       width: 100%;
-      height: 45%;
-      top: auto;
-      bottom: 0;
+      height: 75%;
+      top: 0;
+      bottom: auto;
     }
   }
 }
@@ -57,7 +64,7 @@
   right: 6%;
   width: 500px;
   height: 480px;
-  opacity: 1.0;
+  opacity: 1;
   z-index: 2;
   pointer-events: none;
 
@@ -70,45 +77,52 @@
 }
 
 .hero-container {
-  width: 94%;
-  max-width: 1750px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 20px;
-  align-items: flex-end;
+  grid-template-columns: 62.1% 37.9%;
+  gap: 0;
+  align-items: stretch;
   position: relative;
   z-index: $z-floating;
+  width: 100%;
+
+  height: 100%;
+  min-height: 0;
 
   @include laptop {
-    grid-template-columns: 1fr 0.9fr;
-    gap: 20px;
+    grid-template-columns: 60% 40%;
   }
 
   @include tablet {
     grid-template-columns: 1fr;
-    padding-top: 40px;
+    min-height: auto;
   }
 }
 
 // Left Column Content
 .hero-content {
-  padding-right: 20px;
+  height: 100%;
+  margin-top: 0;
+  padding: 80px 20px 20px 0;
+  box-sizing: border-box;
   align-self: flex-start;
-  margin-top: -120px;
-  padding-bottom: 0;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
 
   @include tablet {
-    padding-right: 0;
+    margin-top: 20px;
+  }
+
+  @include mobile {
+    margin-top: 10px;
   }
 }
 
 .hero-cta-group {
+  margin-left: 40px;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   margin-bottom: 36px;
 
   @include mobile {
@@ -127,15 +141,15 @@
 .btn-video {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   color: $color-navy;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   transition: $transition-fast;
 
   .play-icon-wrapper {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background-color: $color-white;
     @include flex-center;
@@ -143,8 +157,8 @@
     transition: $transition-base;
 
     svg {
-      width: 15px;
-      height: 15px;
+      width: 13px;
+      height: 13px;
       fill: $color-navy;
       margin-left: 2px;
     }
@@ -161,46 +175,61 @@
 // Right Column Visual Layout
 .hero-visual {
   position: relative;
-  height: 100%;
-  min-height: 720px;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   overflow: visible;
 
-  @include laptop {
-    min-height: 600px;
-  }
+  height: 100%;
+  min-height: 0;
 
   @include tablet {
-    min-height: 480px;
-    margin-top: 30px;
+    height: auto;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
 // Large model image reaching baseline with head aligned at main title level
 .model-image {
   position: absolute;
-  bottom: 35px;
-  left: -170px;
+  left: 0;
+  transform: translateX(-55%);
+  bottom: -24px;
+
   height: 770px;
-  max-height: 770px;
   width: auto;
   max-width: none;
+
   object-fit: contain;
-  object-position: bottom;
-  z-index: 4;
-  filter: none;
+  object-position: bottom center;
+  z-index: 5;
 
   @include laptop {
     height: 560px;
-    left: -140px;
+    left: 0;
+    transform: translateX(-30%);
+    bottom: -16px;
   }
 
   @include tablet {
-    height: 420px;
     position: relative;
-    bottom: 0;
-    left: 0;
+    bottom: auto;
+    left: auto;
+    transform: none;
+
+    display: block;
+    height: 420px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }

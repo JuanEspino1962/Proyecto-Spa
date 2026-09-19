@@ -1,12 +1,12 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // Glassmorphic Testimonial Floating Cards
 .testimonial-card {
   @include glass-card;
   position: absolute;
-  padding: 22px 24px;
-  max-width: 320px;
+  padding: 18px 20px;
+  max-width: 290px;
   z-index: 5;
   transition: transform $transition-base;
 
@@ -15,8 +15,8 @@
   }
 
   @include laptop {
-    max-width: 280px;
-    padding: 18px 20px;
+    max-width: 260px;
+    padding: 16px 18px;
   }
 
   @include tablet {
@@ -32,30 +32,30 @@
 
 // Sophia's Card: Positioned on the right mint area, shifted leftwards
 .card-sophia {
-  top: 15%;
-  right: 120px;
+  top: 24%;
+  right: 70px;
 
   @include laptop {
-    top: 10%;
-    right: 60px;
+    top: 32%;
+    right: 30px;
   }
 }
 
 // Tamara's Card: Positioned on lower mint area, shifted down and left
 .card-tamara {
-  top: 365px;
-  right: 260px;
+  top: 60%;
+  right: 210px;
 
   @include laptop {
-    top: 300px;
-    right: 180px;
+    top: 62%;
+    right: 130px;
   }
 }
 
 .quote-icon {
-  width: 20px;
-  height: 20px;
-  margin-bottom: 10px;
+  width: 18px;
+  height: 18px;
+  margin-bottom: 8px;
   color: $color-navy;
 
   svg {
@@ -66,19 +66,19 @@
 }
 
 .testimonial-text {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: $color-navy;
   line-height: 1.5;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 500;
 
   @include laptop {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 }
 
 .testimonial-author {
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: $color-navy;
   font-style: normal;

@@ -1,11 +1,24 @@
 // GlowQueen Master SCSS Entry Point - Modern Sass @use syntax
 
-@use 'variables' as *;
-@use 'reset';
-@use 'mixins' as *;
-@use 'typography';
-@use 'navbar';
-@use 'hero';
-@use 'stats';
-@use 'testimonials';
-@use 'responsive';
+@use "variables" as *;
+@use "reset";
+@use "mixins" as *;
+@use "typography";
+@use "navbar";
+@use "hero";
+@use "stats";
+@use "testimonials";
+@use "responsive";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
