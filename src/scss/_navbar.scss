@@ -1,0 +1,150 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Navbar Component
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-nav;
+  padding: 24px 0 10px;
+}
+
+.header-container {
+  width: 94%;
+  max-width: 1750px;
+  margin: 0 auto;
+  @include flex-between;
+}
+
+.brand-logo {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+
+  .brand-glow {
+    color: $color-navy;
+  }
+
+  .brand-queen {
+    color: $color-mint;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+
+  @include laptop {
+    gap: 28px;
+  }
+}
+
+.nav-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: $color-navy;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+    color: $color-navy;
+  }
+
+  .chevron-icon {
+    width: 13px;
+    height: 13px;
+    stroke: currentColor;
+    transition: transform $transition-fast;
+  }
+
+  &.has-dropdown:hover .chevron-icon {
+    transform: translateY(2px);
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-right: 24px;
+
+  @include laptop {
+    gap: 18px;
+    margin-right: 0;
+  }
+}
+
+.icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: $color-navy;
+  transition: $transition-fast;
+
+  &:hover {
+    background-color: rgba($color-navy, 0.08);
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    background-color: $color-navy;
+    border-radius: 50%;
+  }
+}
+
+.auth-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $color-navy;
+  padding: 8px 14px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-signup {
+  @include button-pill($color-navy, $color-white);
+  padding: 12px 30px;
+  font-size: 1rem;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    width: 24px;
+    height: 2px;
+    background-color: $color-navy;
+    border-radius: 2px;
+    transition: $transition-fast;
+  }
+
+  @include tablet {
+    display: flex;
+  }
+}

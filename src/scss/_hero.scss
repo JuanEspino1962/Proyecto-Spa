@@ -1,0 +1,235 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+$header-height: 90px;
+
+// Hero Section Layout & Full-Height Split Background
+.hero-section {
+  position: relative;
+  height: 100svh;
+  min-height: 0;
+
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  overflow: hidden;
+  background-color: $color-cream-bg;
+
+  padding: 20px 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  // Full-width solid white background for bottom 1/4 of screen
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: $color-white;
+    z-index: $z-normal;
+  }
+
+  // Background Split: Right 37.9% is Mint Green for top 75% of screen
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 37.9%;
+    height: 75%;
+    background-color: $color-mint-bg;
+    z-index: $z-normal;
+
+    @include laptop {
+      width: 40%;
+      height: 75%;
+    }
+
+    @include tablet {
+      width: 100%;
+      height: 75%;
+      top: 0;
+      bottom: auto;
+    }
+  }
+}
+
+// Two-Petal Shadow Watermark SVG positioned directly behind model head/neck in mint section
+.hero-watermark {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  width: 500px;
+  height: 480px;
+  opacity: 1;
+  z-index: 2;
+  pointer-events: none;
+
+  @include laptop {
+    width: 420px;
+    height: 400px;
+    top: 8%;
+    right: 4%;
+  }
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 62.1% 37.9%;
+  gap: 0;
+  align-items: stretch;
+  position: relative;
+  z-index: $z-floating;
+  width: 100%;
+
+  height: 100%;
+  min-height: 0;
+
+  @include laptop {
+    grid-template-columns: 60% 40%;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+// Left Column Content
+.hero-content {
+  height: 100%;
+  margin-top: 0;
+  padding: 80px 20px 20px 0;
+  box-sizing: border-box;
+  align-self: flex-start;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+  }
+}
+
+.hero-cta-group {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.btn-book {
+  @include button-pill($color-navy, $color-white);
+  padding: 18px 42px;
+  font-size: 1.05rem;
+}
+
+.btn-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: $color-navy;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: $transition-fast;
+
+  .play-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: $color-white;
+    @include flex-center;
+    box-shadow: $shadow-md;
+    transition: $transition-base;
+
+    svg {
+      width: 13px;
+      height: 13px;
+      fill: $color-navy;
+      margin-left: 2px;
+    }
+  }
+
+  &:hover {
+    .play-icon-wrapper {
+      transform: scale(1.08);
+      box-shadow: $shadow-lg;
+    }
+  }
+}
+
+// Right Column Visual Layout
+.hero-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+
+  height: 100%;
+  min-height: 0;
+
+  @include tablet {
+    height: auto;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// Large model image reaching baseline with head aligned at main title level
+.model-image {
+  position: absolute;
+  left: 0;
+  transform: translateX(-55%);
+  bottom: -24px;
+
+  height: 770px;
+  width: auto;
+  max-width: none;
+
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 5;
+
+  @include laptop {
+    height: 560px;
+    left: 0;
+    transform: translateX(-30%);
+    bottom: -16px;
+  }
+
+  @include tablet {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+
+    display: block;
+    height: 420px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Responsive Adaptations & Mobile Navigation Drawer
+
+@include tablet {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: $color-white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 32px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right $transition-base;
+    z-index: 90;
+
+    &.active {
+      right: 0;
+    }
+  }
+
+  .nav-actions {
+    margin-right: 12px;
+  }
+}
+
+@include mobile {
+  .site-header {
+    padding: 16px 0;
+  }
+
+  .header-container {
+    width: 92%;
+  }
+
+  .hero-section {
+    padding-top: 90px;
+  }
+
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+
+  .btn-signup {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+}
